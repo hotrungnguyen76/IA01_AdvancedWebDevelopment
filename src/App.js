@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const boardSize = 4;
+const boardSize = 3; // Determines the size of the board
 
 function Square({ value, onSquareClick, isWinningSquare }) {
   let className = "square";

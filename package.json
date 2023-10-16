@@ -9,7 +9,7 @@
   "name": "wql4c3",
   "description": null,
   "version": "0.0.0",
-  "homepage": "hhttps://hotrungnguyen76.github.io/IA01_AdvancedWebDevelopment/",
+  "homepage": "https://hotrungnguyen76.github.io/IA01_AdvancedWebDevelopment/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
