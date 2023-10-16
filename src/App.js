@@ -108,15 +108,22 @@ export default function Game() {
   }
 
   const moves = history.map((info, move) => {
+    const isCurrentMove = move === currentMove;
     let description;
-    if (move > 0) {
+
+    if (isCurrentMove) {
       description = `You are at move #${move}: Player ${info.player} at [${info.position[0]},${info.position[1]}]`;
     } else {
-      description = "Go to game start";
+      description = `Go to move #${move}`;
     }
+
     return (
       <li key={move}>
-        <p onClick={() => jumpTo(move)}>{description}</p>
+        {isCurrentMove ? (
+          <span>{description}</span>
+        ) : (
+          <button onClick={() => jumpTo(move)}>{description}</button>
+        )}
       </li>
     );
   });
@@ -133,11 +140,13 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div>
+        <div>
+          <button onClick={toggleSortOrder}>
+            Toggle Sort Order: {isDescending ? "↓" : "↑"}
+          </button>
+        </div>
         <div className="game-info">
           <ol>{sortedMoves}</ol>
-        </div>
-        <div>
-          <button onClick={toggleSortOrder}>Sort</button>
         </div>
       </div>
     </div>
