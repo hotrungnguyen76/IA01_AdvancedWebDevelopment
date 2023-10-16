@@ -85,7 +85,7 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
-  const [isDescending, setIsDescending] = useState(true);
+  const [isDescending, setIsDescending] = useState(false);
   const [history, setHistory] = useState([
     {
       squares: Array(boardSize * boardSize).fill(null),
@@ -115,6 +115,10 @@ export default function Game() {
       description = `You are at move #${move}: Player ${info.player} at [${info.position[0]},${info.position[1]}]`;
     } else {
       description = `Go to move #${move}`;
+    }
+
+    if (move == 0) {
+      description = "Go To Game Start";
     }
 
     return (
