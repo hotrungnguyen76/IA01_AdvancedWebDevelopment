@@ -139,13 +139,13 @@ export default function Game() {
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div>
+      <div className="game-info">
         <div>
           <button onClick={toggleSortOrder}>
             Toggle Sort Order: {isDescending ? "↓" : "↑"}
           </button>
         </div>
-        <div className="game-info">
+        <div>
           <ol>{sortedMoves}</ol>
         </div>
       </div>
